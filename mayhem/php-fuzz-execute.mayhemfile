@@ -1,0 +1,4 @@
+project: php-src
+target: php-fuzz-execute
+cmds:
+- cmd: /out/php-fuzz-execute
