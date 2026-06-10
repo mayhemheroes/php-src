@@ -1,0 +1,11 @@
+project: php-src
+target: php-fuzz-json
+
+# libFuzzer target from PHP's --enable-fuzzer SAPI (sapi/fuzzer/fuzzer-json.c), built
+# instrumented (ASan+UBSan) on the org base. Seeded from /mayhem/sapi/fuzzer/corpus/json.
+testsuite:
+  - file:///mayhem/sapi/fuzzer/corpus/json
+
+cmds:
+  - cmd: /mayhem/out/php-fuzz-json
+    libfuzzer: true

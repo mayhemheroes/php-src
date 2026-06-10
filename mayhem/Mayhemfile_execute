@@ -1,0 +1,11 @@
+project: php-src
+target: php-fuzz-execute
+
+# libFuzzer target from PHP's --enable-fuzzer SAPI (sapi/fuzzer/fuzzer-execute.c), built
+# instrumented (ASan+UBSan) on the org base. Seeded from /mayhem/mayhem/testsuite/execute.
+testsuite:
+  - file:///mayhem/mayhem/testsuite/execute
+
+cmds:
+  - cmd: /mayhem/out/php-fuzz-execute
+    libfuzzer: true

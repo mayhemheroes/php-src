@@ -1,0 +1,11 @@
+project: php-src
+target: php-fuzz-exif
+
+# libFuzzer target from PHP's --enable-fuzzer SAPI (sapi/fuzzer/fuzzer-exif.c), built
+# instrumented (ASan+UBSan) on the org base. Seeded from /mayhem/sapi/fuzzer/corpus/exif.
+testsuite:
+  - file:///mayhem/sapi/fuzzer/corpus/exif
+
+cmds:
+  - cmd: /mayhem/out/php-fuzz-exif
+    libfuzzer: true

@@ -1,0 +1,11 @@
+project: php-src
+target: php-fuzz-unserializehash
+
+# libFuzzer target from PHP's --enable-fuzzer SAPI (sapi/fuzzer/fuzzer-unserializehash.c), built
+# instrumented (ASan+UBSan) on the org base. Seeded from /mayhem/mayhem/testsuite/unserializehash.
+testsuite:
+  - file:///mayhem/mayhem/testsuite/unserializehash
+
+cmds:
+  - cmd: /mayhem/out/php-fuzz-unserializehash
+    libfuzzer: true

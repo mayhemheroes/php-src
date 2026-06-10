@@ -1,0 +1,11 @@
+project: php-src
+target: php-fuzz-parser
+
+# libFuzzer target from PHP's --enable-fuzzer SAPI (sapi/fuzzer/fuzzer-parser.c), built
+# instrumented (ASan+UBSan) on the org base. Seeded from /mayhem/mayhem/testsuite/parser.
+testsuite:
+  - file:///mayhem/mayhem/testsuite/parser
+
+cmds:
+  - cmd: /mayhem/out/php-fuzz-parser
+    libfuzzer: true
